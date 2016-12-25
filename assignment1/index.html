@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<meta charset="UTF-8">
+
+<head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <script src="js/angular.min.js"></script>
+    <!--<script src="js/angular-sanitize.js"></script>-->
+    <script src="js/appp.js"></script>
+    <style>
+        .message {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        
+        .clr1 {
+            border-color: red;
+        }
+        
+        .clr2 {
+            border-color: green;
+        }
+        
+        .clr3 {
+            border-color: #000cff;
+        }
+        
+        .clr11 {
+            color: red;
+        }
+        
+        .clr22 {
+            color: green;
+        }
+        
+        .clr33 {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body ng-app="LunchCheck">
+    <div class="container" ng-controller="LCController">
+        <h1>Lunch Checker</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input ng-model="lunchmenu" type="text" placeholder="list comma separated dishes you usually have for lunch" class="form-control {{activeClass}}">
+                </div>
+                <div class="form-group">
+                    <button ng-click="checkLunch()" class="btn btn-primary">Check If Too Much</button>
+                </div>
+                <div class="message {{activeClass1}}">
+                    {{result}}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
